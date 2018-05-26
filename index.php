@@ -2,7 +2,12 @@
   $linea = "Linea ".$_GET['linea'];
 }else{
   $linea = "Seleccione una linea";
-}  
+}
+if(isset($_GET['nombre'])){
+    $nombre = $_GET['nombre'];
+}else{
+    $nombre = "Cuenta";
+  } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +42,7 @@
   		</nav>
   		<nav class="side-menu">
   				<ul>
+                  <li><a><span class="icon-user"></span><?php echo ($nombre);?></a></li>
   					<li><a href="noticias.html"><span class="icon-bus"></span> Noticias de Lineas</a></li>
   					<li><a href="irA.html"><span class = "icon-compass"></span> Ir a...</a></li>
   					<li><a href=""><span class = "icon-question"></span> Dónde cargo</a></li>
