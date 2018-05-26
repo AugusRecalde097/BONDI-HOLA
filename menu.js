@@ -2,7 +2,7 @@ $(document).ready(main);
 
 var opciones = 1;
 var lineas = 1;
-
+var lastScrollTop = 0;
 function main(){
   $('.bt-menu').click(function(){
    //$('nav').toggle();        
@@ -24,8 +24,11 @@ $('.select-menu').click(function(){
       $('.lines-list').animate({top: '-100%'});
     }  
 });
+
+
 window.addEventListener("scroll", function(){
-  if (this.scrollY >= 1){
+  var st = window.pageYOffset || document.documentElement.scrollTop; 
+  if (st > lastScrollTop){ //al mover es Scroll hacia abajo se esconden los menus
     if(lineas==0){
       $('.lines-list').animate({top: '-100%'});
       lineas=1;
@@ -34,10 +37,11 @@ window.addEventListener("scroll", function(){
       $('.side-menu').animate({left: '-100%'});
       opciones=1;
     }
-  }
+    
+  }else{
+   
+  } 
+  lastScrollTop = st;
+
 }, false);
-
-
-
-
 };

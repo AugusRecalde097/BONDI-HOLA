@@ -1,3 +1,9 @@
+<?php if(isset($_GET['linea'])){
+  $linea = "Linea ".$_GET['linea'];
+}else{
+  $linea = "Seleccione una linea";
+}  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,22 +16,23 @@
   <link rel="stylesheet" type="text/css" href="fonts/style.css">
 </head>
 <body>
+
   <header>
   	<div class = "menu_bar" >
   		<a href="#" class="bt-menu"><span class="icon-list2"></span></a>
-  		<a href="#" class="select-menu">Selecciona una linea</a>
+  		<a href="#" class="select-menu"><?php echo ($linea);?></a>
   	</div>
   		<nav class="lines-list">
   				<ul>
-  					<li><a href="#">Linea 25</a></li>
-  					<li><a href="#">Linea 30</a></li>
-  					<li><a href="#">Linea 40</a></li>
-  					<li><a href="#">Linea 60</a></li>
-  					<li><a href="#">Linea 65</a></li>
-  					<li><a href="#">Linea 70</a></li>
-  					<li><a href="#">Linea 80</a></li>
-  					<li><a href="#">Linea 90</a></li>
-            <li><a href="#">Linea 100</a></li>
+  					<li><a href="index.php?linea=25">Linea 25</a></li>
+  					<li><a href="index.php?linea=30">Linea 30</a></li>
+  					<li><a href="index.php?linea=40">Linea 40</a></li>
+  					<li><a href="index.php?linea=60">Linea 60</a></li>
+  					<li><a href="index.php?linea=65">Linea 65</a></li>
+  					<li><a href="index.php?linea=70">Linea 70</a></li>
+  					<li><a href="index.php?linea=80">Linea 80</a></li>
+  					<li><a href="index.php?linea=90">Linea 90</a></li>
+                    <li><a href="index.php?linea=100">Linea 100</a></li>
           </ul>
   		</nav>
   		<nav class="side-menu">

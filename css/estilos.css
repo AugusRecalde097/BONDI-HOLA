@@ -2,8 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+
 #map{
-    height:785px;
+    /* height:785px; */
     width:100%;
 }
 
@@ -519,9 +520,8 @@ small {
 	}
 /*MAPA*/
 	#map{
-      height:800px;
+	  height:750px;
       width:100%;
-      float: right;
 	}
 /*BARRA SUPERRIOR DE MENUS*/
     .menu_bar {
