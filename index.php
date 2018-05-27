@@ -8,6 +8,20 @@ if(isset($_GET['nombre'])){
 }else{
     $nombre = "Cuenta";
   } 
+
+  //cookie de Inicio de sesión
+  if(isset($_COOKIE['nombre']))
+  { 
+    // Caduca en un año 
+    setcookie('nombre', $_GET['nombre'], time() + 365 * 24 * 60 * 60); 
+    $mensaje = 'Hola de nuevo: ' . $_GET['nombre']; 
+  } 
+  else 
+  { 
+    // Caduca en un año 
+    setcookie('nombre', 1, time() + 365 * 24 * 60 * 60); 
+    header('Location: login.html'); 
+  } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +29,7 @@ if(isset($_GET['nombre'])){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
   <meta name="viewport" content="initial-scale=1, width=device-width,maximum-scale=1, user-scalable=no">
   <title>BondiHola - Pantalla de Inicio</title>
   <link rel="stylesheet" type="text/css" href="css/estilos.css">
@@ -58,7 +73,7 @@ if(isset($_GET['nombre'])){
       // Map options
       var options = {
         zoom:17,
-        center:{lat:-26.1819849,lng:-58.188476}
+        center:{lat:-26.182498,lng:-58.194629}
       }
 
       // New map
