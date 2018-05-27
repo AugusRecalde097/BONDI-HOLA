@@ -99,7 +99,7 @@ header nav ul li{
 }
 header nav ul li a{
 	color: #fff;
-	padding: 20px;
+	padding: 15px;
 	display:block;
 	text-decoration: none;
 }
@@ -207,6 +207,9 @@ span{
 	border-bottom-color: #bce8f1;
   }
   .panel-heading {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
 	padding: 10px 15px;
 	border-bottom: 1px solid transparent;
 	border-top-left-radius: 3px;
@@ -515,7 +518,7 @@ small {
 		display: block;
 		float: none;
 		text-align: left;
-		font-size: 15px;
+		font-size: 80%;
 		border-bottom:2px solid rgba(255,255,255,.3);
 	}
 /*MAPA*/
