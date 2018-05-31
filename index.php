@@ -1,27 +1,27 @@
-<?php if(isset($_GET['linea'])){
-  $linea = "Linea ".$_GET['linea'];
-}else{
-  $linea = "Seleccione una linea";
-}
-if(isset($_GET['nombre'])){
-    $nombre = $_GET['nombre'];
-}else{
+<?php 
+  //Definir número de la linea de preferencia;
+  if(isset($_GET['linea'])){
+    $linea = "Linea ".$_GET['linea'];
+  }else{
+    $linea = "Seleccione una linea";
+  }
+  
+  //Defiri nombre para la cuenta que se usa;
+  if((isset($_GET['nombre'])) && ($_GET['nombre'] <> $_COOKIE['nombre'])){
+      $nombre = $_GET['nombre'];
+  }else{
     $nombre = "Cuenta";
   } 
-
-  //cookie de Inicio de sesión
-  if(isset($_COOKIE['nombre']))
-  { 
-    // Caduca en un año 
-    setcookie('nombre', $_GET['nombre'], time() + 365 * 24 * 60 * 60); 
-    $mensaje = 'Hola de nuevo: ' . $_GET['nombre']; 
-  } 
-  else 
-  { 
-    // Caduca en un año 
-    setcookie('nombre', 1, time() + 365 * 24 * 60 * 60); 
+//cookie de Inicio de sesión;
+if(isset($_COOKIE['nombre'])){ 
+    // Caduca en un año; time() + 365 * 24 * 60 * 60
+    setcookie('nombre', $nombre, time() + 365 * 24 * 60 * 60); 
+    $nombreUsuario = $nombre;
+}else{ 
+    // Caduca en un año;
+    setcookie('nombre', $nombre, time() + 365 * 24 * 60 * 60); 
     header('Location: login.html'); 
-  } 
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +57,7 @@ if(isset($_GET['nombre'])){
   		</nav>
   		<nav class="side-menu">
   				<ul>
-                  <li><a href="cuenta.html"><span class="icon-user"></span><?php echo ($nombre);?></a></li>
+                  <li><a href="cuenta.html"><span class="icon-user"></span><?php echo ($nombreUsuario);?></a></li>
   					<li><a href="noticias.html"><span class="icon-bus"></span> Noticias de Lineas</a></li>
   					<li><a href="irA.html"><span class = "icon-compass"></span> Ir a...</a></li>
   					<li><a href=""><span class = "icon-question"></span> Dónde cargo</a></li>

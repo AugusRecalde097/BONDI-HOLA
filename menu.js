@@ -4,7 +4,8 @@ var opciones = 1;
 var lineas = 1;
 var lastScrollTop = 0;
 function main(){
-  $('.bt-menu').click(function(){
+
+  $('.bt-menu').click(function(){ // 
    //$('nav').toggle();        
     if(opciones==1){       
       $('.side-menu').animate({left:'0'});
@@ -25,7 +26,6 @@ $('.select-menu').click(function(){
     }  
 });
 
-
 window.addEventListener("scroll", function(){
   var st = window.pageYOffset || document.documentElement.scrollTop; 
   if (st > lastScrollTop){ //al mover es Scroll hacia abajo se esconden los menus
@@ -38,9 +38,7 @@ window.addEventListener("scroll", function(){
       opciones=1;
     }
     
-  }else{
-   
-  } 
+  }
   lastScrollTop = st;
 
 }, false);
